@@ -142,9 +142,7 @@ def yolo_head(feats, anchors, num_classes, input_shape, calc_loss=False):
     return box_xy, box_wh, box_confidence, box_class_probs
 
 
-# ---------------------------------------------------#
 #   对box进行调整，使其符合真实图片的样子
-# ---------------------------------------------------#
 def yolo_correct_boxes(box_xy, box_wh, input_shape, image_shape):
     box_yx = box_xy[..., ::-1]
     box_hw = box_wh[..., ::-1]
